@@ -38,7 +38,7 @@ function App() {
   }
   return (
     <div className="App">
-      {success == false ? <Users setSuccess={setSuccess} invites={invites} onClickInvite={onCLickInvite} onChangeSearchValue={onChangeSearchValue} searchValue={searchValue} items={users} isLoading={isLoading} /> : <Success />} 
+      {success == false ? <Users setSuccess={setSuccess} invites={invites} onClickInvite={onCLickInvite} onChangeSearchValue={onChangeSearchValue} searchValue={searchValue} items={users} isLoading={isLoading} /> : <Success count = {invites.length}/>} 
     </div>
   );
 }

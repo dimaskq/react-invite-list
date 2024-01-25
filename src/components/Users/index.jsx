@@ -4,6 +4,7 @@ import { User } from './User';
 
 export const Users = ({ items, isLoading, searchValue, onChangeSearchValue, invites, onClickInvite, setSuccess }) => {
   const success = () => {
+    
     setSuccess(true)
   }
   return (
@@ -30,7 +31,8 @@ export const Users = ({ items, isLoading, searchValue, onChangeSearchValue, invi
           })).map(obj => <User onClickInvite={onClickInvite} isInvited={invites.includes(obj.id)} key={obj.id} {...obj} />)}
         </ul>
       )}
-      <button className="send-invite-btn" onClick={success}>Отправить приглашение</button>
+
+      {invites.length > 0 &&  <button className="send-invite-btn" onClick={success}>Отправить приглашение</button>}
     </>
   );
 };
